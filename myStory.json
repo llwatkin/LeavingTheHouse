@@ -1,0 +1,168 @@
+{
+    "Title": "Leaving the House: A Simulator",
+    "Credits": "Created by Lyle Watkins",
+    "InitialLocation": "Doorway",
+    "KeycardAreas": {
+        "Floor": [
+            "Kitchen",
+            "Living Room",
+            "Bedroom"
+        ],
+        "Surface": [
+            "Kitchen",
+            "Living Room",
+            "Bedroom"
+        ],
+        "Special": [
+            "Kitchen",
+            "Living Room",
+            "Bedroom"
+        ]
+    },
+    "Hints": {
+        "Floor": [
+            "It might've fallen out of my pocket.",
+            "I don't remember where I last had it.",
+            "I don't think I set it down anywhere."
+        ],
+        "Surface": [
+            "I think I set it down somewhere.",
+            "I think I remember seeing it somewhere.",
+            "I don't think it fell of my pocket."
+        ],
+        "Special": [
+            "I have no idea where it could be.",
+            "I don't remember seeing it anywhere.",
+            "It must be in a weird place."
+        ]
+    },
+    "NotFoundPhrases": [
+        "It's not here.",
+        "I didn't find it.",
+        "I didn't leave it here.",
+        "I don't see it here."
+    ],
+    "Locations": {
+        "Doorway": {
+            "Body": "I'm in the doorway. It's time to leave.",
+            "Choices": [
+                {
+                    "Text": "Leave",
+                    "RequiredKey": "Keycard",
+                    "NoKeyText": "Wait, I don't have my keycard! I need to find it before I can leave.",
+                    "AwardsKey": "TryToLeave",
+                    "NoKeyTarget": "Doorway",
+                    "Target": "Outside"
+                },
+                {
+                    "Text": "Go to Living Room",
+                    "RequiredKey": "TryToLeave",
+                    "NoKeyText": "No need to go there. I need to leave.",
+                    "NoKeyTarget": "Doorway",
+                    "Target": "Living Room"
+                }
+            ]
+        },
+        "Outside": {
+            "Body": "Phew, I'm finally outside."
+        },
+        "Living Room": {
+            "Body": "I'm in the living room.",
+            "Choices": [
+                {
+                    "Text": "Search Floor",
+                    "Mechanism": {
+                        "Text": "I search all over the floor."
+                    },
+                    "Target": "Living Room"
+                },
+                {
+                    "Text": "Search Surfaces",
+                    "Mechanism": {
+                        "Text": "I search the coffee table and side tables."
+                    },
+                    "Target": "Living Room"
+                },
+                {
+                    "Text": "Search Couch",
+                    "Mechanism": {
+                        "Text": "I dig through the cushions of the couch."
+                    },
+                    "Target": "Living Room"
+                },
+                {
+                    "Text": "Go to Kitchen",
+                    "Target": "Kitchen"
+                },
+                {
+                    "Text": "Go to Bedroom",
+                    "Target": "Bedroom"
+                },
+                {
+                    "Text": "Go to Doorway",
+                    "Target": "Doorway"
+                }
+            ]
+        },
+        "Kitchen": {
+            "Body": "I'm in the kitchen.",
+            "Choices": [
+                {
+                    "Text": "Search Floor",
+                    "Mechanism": {
+                        "Text": "I search all over the floor."
+                    },
+                    "Target": "Kitchen"
+                },
+                {
+                    "Text": "Search Countertops",
+                    "Mechanism": {
+                        "Text": "I look over all of the countertops."
+                    },
+                    "Target": "Kitchen"
+                },
+                {
+                    "Text": "Search Fridge",
+                    "Mechanism": {
+                        "Text": "I check the shelves of the fridge."
+                    },
+                    "Target": "Kitchen"
+                },
+                {
+                    "Text": "Go to Living Room",
+                    "Target": "Living Room"
+                }
+            ]
+        },
+        "Bedroom": {
+            "Body": "I'm in the bedroom.",
+            "Choices": [
+                {
+                    "Text": "Search Floor",
+                    "Mechanism": {
+                        "Text": "I search all over the floor."
+                    },
+                    "Target": "Bedroom"
+                },
+                {
+                    "Text": "Search Desk",
+                    "Mechanism": {
+                        "Text": "I search on and around my desk."
+                    },
+                    "Target": "Bedroom"
+                },
+                {
+                    "Text": "Search Pockets",
+                    "Mechanism": {
+                        "Text": "I search through my clothes' pockets."
+                    },
+                    "Target": "Bedroom"
+                },
+                {
+                    "Text": "Go to Living Room",
+                    "Target": "Living Room"
+                }
+            ]
+        }
+    }
+}
